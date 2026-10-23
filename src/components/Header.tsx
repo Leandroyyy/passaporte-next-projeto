@@ -1,11 +1,13 @@
+import Link from "next/link";
+
 export default function Header() {
   return (
     <header>
-      <a href="/" className="logo">
+      <Link href="/" className="logo">
         Passaporte
-      </a>
+      </Link>
       <nav>
-        <a href="/">Países</a>
+        <Link href="/">Países</Link>
         <a href="/sobre">Sobre</a>
       </nav>
     </header>

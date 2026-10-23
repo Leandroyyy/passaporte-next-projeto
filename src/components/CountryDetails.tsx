@@ -1,17 +1,21 @@
-import type { Country } from '@/lib/types';
-import { formatNumber } from '@/lib/utils';
+import type { Country } from "@/lib/types";
+import { formatNumber } from "@/lib/utils";
+import React from "react";
 
 interface CountryDetailsProps {
   country: Country;
   children?: React.ReactNode;
 }
 
-export default function CountryDetails({ country, children }: CountryDetailsProps) {
+export default function CountryDetails({
+  country,
+  children,
+}: CountryDetailsProps) {
   const nome = country.translations.por.common;
-  const idiomas = Object.values(country.languages ?? {}).join(', ');
+  const idiomas = Object.values(country.languages ?? {}).join(", ");
   const moedas = Object.values(country.currencies ?? {})
     .map((moeda) => `${moeda.name} (${moeda.symbol})`)
-    .join(', ');
+    .join(", ");
 
   return (
     <>
@@ -22,7 +26,7 @@ export default function CountryDetails({ country, children }: CountryDetailsProp
         <p className="official">{country.translations.por.official}</p>
         <dl className="facts">
           <dt>Capital</dt>
-          <dd>{country.capital?.join(', ') ?? '—'}</dd>
+          <dd>{country.capital?.join(", ") ?? "—"}</dd>
           <dt>População</dt>
           <dd>{formatNumber(country.population)}</dd>
           <dt>Idiomas</dt>
