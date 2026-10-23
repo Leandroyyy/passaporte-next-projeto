@@ -1,0 +1,406 @@
+:root {
+  --display: 'Iowan Old Style', 'Palatino Linotype', Palatino, 'Book Antiqua', Georgia, serif;
+  --ink: #0b1f3a;
+  --muted: #5a6b82;
+  --sky: #e7eef6;
+  --sun: #ffc21a;
+  --perforation: #c9d5e3;
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  color: var(--ink);
+  background: var(--sky);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 20px 24px;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--ink);
+  font-family: var(--display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.logo::before {
+  content: '✈';
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--sun);
+  font-family: system-ui, sans-serif;
+  font-size: 1.1rem;
+}
+
+header nav {
+  display: flex;
+  gap: 20px;
+}
+
+header nav a {
+  padding: 6px 0;
+  border-bottom: 3px solid transparent;
+  color: var(--muted);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+header nav a:hover {
+  color: var(--ink);
+}
+
+header nav a.active {
+  color: var(--ink);
+  border-bottom-color: var(--sun);
+}
+
+.toolbar {
+  padding: 16px 24px 0;
+}
+
+.toolbar h2 {
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  line-height: 1.05;
+}
+
+.status {
+  margin: 40px 24px;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 22px;
+  padding: 24px 24px 48px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 16px;
+  outline: 2px solid transparent;
+  background: #fff;
+}
+
+.card:hover {
+  outline-color: var(--ink);
+}
+
+.card-link {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-bottom: 16px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.card-link:not(:last-child) {
+  border-bottom: 2px dashed var(--perforation);
+}
+
+.flag {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  margin-bottom: 10px;
+  object-fit: cover;
+}
+
+.card h3 {
+  margin: 0;
+  padding: 0 16px;
+  font-family: var(--display);
+  font-size: 1.3rem;
+}
+
+.meta {
+  margin: 0;
+  padding: 0 16px;
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-variant-numeric: tabular-nums;
+}
+
+button {
+  padding: 11px 18px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--sun);
+  color: var(--ink);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #f0ae00;
+}
+
+button:disabled {
+  background: #d4dbe4;
+  color: var(--muted);
+  cursor: default;
+}
+
+.card > button {
+  margin: 14px 16px 16px;
+}
+
+.visit {
+  padding: 9px 16px;
+  border: 2px solid var(--ink);
+  background: transparent;
+}
+
+.visit:hover {
+  background: #f3f6fa;
+}
+
+.visit.active {
+  background: var(--ink);
+  color: var(--sun);
+}
+
+.content {
+  max-width: 720px;
+  padding: 24px;
+}
+
+.content h2 {
+  margin: 0 0 16px;
+  font-family: var(--display);
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.05;
+}
+
+.content p {
+  margin: 0 0 12px;
+  color: #34465f;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.country-page {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  align-items: start;
+  gap: 32px 48px;
+  padding: 24px 24px 56px;
+}
+
+.country-page > img {
+  width: 100%;
+  border: 10px solid #fff;
+  border-radius: 6px;
+  transform: rotate(-2deg);
+}
+
+.country-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.country-info h2 {
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(2.4rem, 6vw, 3.8rem);
+  line-height: 1;
+}
+
+.subregion {
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--sun);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.official {
+  margin: 0;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  width: 100%;
+  margin: 4px 0;
+  padding: 4px 20px;
+  border-radius: 14px;
+  background: #fff;
+}
+
+.facts dt,
+.facts dd {
+  padding: 12px 0;
+  border-bottom: 1px dashed var(--perforation);
+}
+
+.facts dt:last-of-type,
+.facts dd:last-of-type {
+  border-bottom: 0;
+}
+
+.facts dt {
+  padding-right: 24px;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.facts dd {
+  margin: 0;
+  font-weight: 600;
+}
+
+.country-info a {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.error-box {
+  max-width: 460px;
+  margin: 72px auto;
+  padding: 32px 28px;
+  border-radius: 16px;
+  background: #fff;
+  text-align: center;
+}
+
+.error-box h2 {
+  margin: 0;
+  font-family: var(--display);
+  font-size: 1.6rem;
+}
+
+.error-box p {
+  margin: 10px 0 22px;
+  color: var(--muted);
+}
+
+.tips {
+  grid-column: 1 / -1;
+  padding-top: 28px;
+  border-top: 2px dashed var(--perforation);
+}
+
+.tips h3 {
+  margin: 0 0 16px;
+  font-family: var(--display);
+  font-size: 1.6rem;
+}
+
+.tips ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 14px;
+  margin: 0 0 24px;
+  padding: 0;
+  list-style: none;
+}
+
+.tip {
+  padding: 16px 18px;
+  border-left: 6px solid var(--sun);
+  border-radius: 14px;
+  background: #fff;
+}
+
+.tip p {
+  margin: 6px 0 0;
+  color: #34465f;
+  line-height: 1.5;
+}
+
+.muted {
+  margin: 0 0 18px;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.tip-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 520px;
+  padding: 20px;
+  border-radius: 16px;
+  background: var(--ink);
+  color: #fff;
+}
+
+.tip-form h3 {
+  margin: 0;
+  font-family: var(--display);
+  font-size: 1.3rem;
+}
+
+.tip-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: #c8d4e4;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.tip-form input,
+.tip-form textarea {
+  padding: 10px 12px;
+  border: 0;
+  border-radius: 10px;
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+  font-weight: 400;
+}
+
+.tip-form button {
+  align-self: flex-start;
+}
+
+.form-error {
+  margin: 0;
+  color: #ffb4a8;
+  font-weight: 600;
+}
+
+.form-success {
+  margin: 0;
+  color: #9be3b5;
+  font-weight: 600;
+}

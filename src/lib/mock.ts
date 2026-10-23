@@ -1,0 +1,48 @@
+import type { Country } from './types';
+
+export const countries: Country[] = [
+  {
+    cca3: 'ARG',
+    name: { common: 'Argentina', official: 'Argentine Republic' },
+    translations: { por: { common: 'Argentina', official: 'República Argentina' } },
+    capital: ['Buenos Aires'],
+    subregion: 'South America',
+    population: 45376763,
+    flags: { png: 'https://flagcdn.com/w320/ar.png', svg: 'https://flagcdn.com/ar.svg' },
+    languages: { grn: 'Guaraní', spa: 'Spanish' },
+    currencies: { ARS: { name: 'Argentine peso', symbol: '$' } },
+  },
+  {
+    cca3: 'BRA',
+    name: { common: 'Brazil', official: 'Federative Republic of Brazil' },
+    translations: { por: { common: 'Brasil', official: 'República Federativa do Brasil' } },
+    capital: ['Brasília'],
+    subregion: 'South America',
+    population: 212559409,
+    flags: { png: 'https://flagcdn.com/w320/br.png', svg: 'https://flagcdn.com/br.svg' },
+    languages: { por: 'Portuguese' },
+    currencies: { BRL: { name: 'Brazilian real', symbol: 'R$' } },
+  },
+  {
+    cca3: 'CHL',
+    name: { common: 'Chile', official: 'Republic of Chile' },
+    translations: { por: { common: 'Chile', official: 'República do Chile' } },
+    capital: ['Santiago'],
+    subregion: 'South America',
+    population: 19116209,
+    flags: { png: 'https://flagcdn.com/w320/cl.png', svg: 'https://flagcdn.com/cl.svg' },
+    languages: { spa: 'Spanish' },
+    currencies: { CLP: { name: 'Chilean peso', symbol: '$' } },
+  },
+  {
+    cca3: 'MEX',
+    name: { common: 'Mexico', official: 'United Mexican States' },
+    translations: { por: { common: 'México', official: 'Estados Unidos Mexicanos' } },
+    capital: ['Mexico City'],
+    subregion: 'North America',
+    population: 128932753,
+    flags: { png: 'https://flagcdn.com/w320/mx.png', svg: 'https://flagcdn.com/mx.svg' },
+    languages: { spa: 'Spanish' },
+    currencies: { MXN: { name: 'Mexican peso', symbol: '$' } },
+  },
+];
