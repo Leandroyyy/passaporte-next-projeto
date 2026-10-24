@@ -8,7 +8,7 @@ export default function Header() {
       </Link>
       <nav>
         <Link href="/">Países</Link>
-        <a href="/sobre">Sobre</a>
+        <Link href='/sobre'>Sobre</Link>
       </nav>
     </header>
   );

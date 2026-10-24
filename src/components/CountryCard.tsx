@@ -1,5 +1,7 @@
 import type { Country } from "@/lib/types";
 import { formatNumber } from "@/lib/utils";
+import Link from "next/link";
+import VisitButton from "./VisitButton";
 
 interface CountryCardProps {
   country: Country;
@@ -10,7 +12,7 @@ export default function CountryCard({ country }: CountryCardProps) {
 
   return (
     <div className="card">
-      <a href={`/pais/${country.cca3}`} className="card-link">
+      <Link href={`/pais/${country.cca3}`} className="card-link">
         <img
           src={country.flags.png}
           alt={`Bandeira: ${nome}`}
@@ -19,7 +21,8 @@ export default function CountryCard({ country }: CountryCardProps) {
         <h3>{nome}</h3>
         <p className="meta">Capital: {country.capital?.[0] ?? "—"}</p>
         <p className="meta">{formatNumber(country.population)} habitantes</p>
-      </a>
+      </Link>
+      <VisitButton />
     </div>
   );
 }
